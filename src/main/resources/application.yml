@@ -1,0 +1,29 @@
+spring:
+  config:
+    activate:
+      on-profile: local
+  application:
+    name: cloud-storage
+  datasource:
+    url: jdbc:postgresql://localhost:5432/cloud-db
+    username: cloud-storage
+    password: cloud-storage
+    driver-class-name: org.postgresql.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+  liquibase:
+    enabled: false
+
+server:
+  port: 8087
+
+logging:
+  level:
+    org:
+      springframework: INFO
+    ru:
+      cloudstorage: DEBUG
+
