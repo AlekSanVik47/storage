@@ -1,4 +1,13 @@
 spring:
+  docker:
+    compose:
+      file: 'compose.yaml'
+      lifecycle-management: start-only  # Только запуск (не пересоздаёт контейнеры)
+      options:
+        - "--no-recreate"  # Не пересоздаёт контейнеры, если они уже есть
+        - "--no-build"      # Не пересобирает образы (если не нужно)
+      profiles:
+        active: local
   config:
     activate:
       on-profile: local
