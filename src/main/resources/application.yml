@@ -1,4 +1,8 @@
 spring:
+  security:
+    user:
+      name: admin
+      password: admin
   docker:
     compose:
       file: 'compose.yaml'
@@ -14,7 +18,7 @@ spring:
   application:
     name: cloud-storage
   datasource:
-    url: jdbc:postgresql://localhost:5432/cloud-db
+    url: jdbc:postgresql://localhost:5433/cloud-db
     username: cloud-storage
     password: cloud-storage
     driver-class-name: org.postgresql.Driver
@@ -28,6 +32,7 @@ spring:
 
 server:
   port: 8087
+  address:
 
 logging:
   level:
@@ -35,4 +40,5 @@ logging:
       springframework: INFO
     ru:
       cloudstorage: DEBUG
+
 

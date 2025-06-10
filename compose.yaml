@@ -8,7 +8,7 @@ services:
       POSTGRES_USER: cloud-storage
       POSTGRES_PASSWORD: cloud-storage
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
@@ -43,7 +43,7 @@ services:
       redis:
         condition: service_healthy
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/cloud-db
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5433/cloud-db
       SPRING_DATASOURCE_USERNAME: cloud-storage
       SPRING_DATASOURCE_PASSWORD: cloud-storage
       SPRING_REDIS_HOST: redis
